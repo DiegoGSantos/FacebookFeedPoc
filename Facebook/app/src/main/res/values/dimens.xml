@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="post_text_size">16sp</dimen>
+    <dimen name="regular_margin">10dp</dimen>
+</resources>
