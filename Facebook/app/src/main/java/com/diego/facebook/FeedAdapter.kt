@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_post.view.*
 
 
@@ -23,10 +24,16 @@ class FeedAdapter(private val context: Context, private val postsList: List<Post
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val post = postsList[position]
-        holder.title.text = post.title
+        holder.bind(post)
     }
 
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.postTitle
+        fun bind(post: Post) {
+            val title: TextView = itemView.postTitle
+            title.text = post.title
+            Glide.with(itemView.context)
+                .load(post.image)
+                .into(itemView.postImage)
+        }
     }
 }

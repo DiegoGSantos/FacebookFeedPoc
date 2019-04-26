@@ -2,18 +2,84 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/regular_margin">
+    android:layout_marginTop="@dimen/regular_margin"
+    android:layout_marginLeft="@dimen/regular_margin"
+    android:layout_marginRight="@dimen/regular_margin">
 
-    <TextView
-        android:id="@+id/postTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/post_text_size"
-        android:textColor="#000"
         android:padding="@dimen/regular_margin"
-        tools:text="Post 1" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/postTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/post_text_size"
+            android:layout_marginBottom="@dimen/regular_margin"
+            android:textColor="#000"
+            tools:text="Post 1" />
+
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/regular_margin"
+            android:layout_marginBottom="@dimen/regular_margin"
+            android:background="#ccc"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_like"
+                android:gravity="center"
+                android:drawablePadding="@dimen/small_margin"
+                android:textColor="#555"
+                android:text="@string/like"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_comment"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:drawablePadding="@dimen/small_margin"
+                android:textColor="#555"
+                android:text="@string/comment"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_comment"
+                android:gravity="center"
+                android:layout_gravity="end"
+                android:drawablePadding="@dimen/small_margin"
+                android:textColor="#555"
+                android:text="@string/share"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
