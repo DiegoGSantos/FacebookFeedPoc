@@ -1,9 +1,11 @@
 package com.diego.facebook
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
+import com.diego.facebook.PostDetailActivity.Companion.POST_CONTENT
 import com.diego.facebook.restClient.Service
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
@@ -30,6 +32,9 @@ class MainActivity : AppCompatActivity(), FeedAdapter.OnItemClick {
     }
 
     override fun onPostClick(post: Post) {
-        Toast.makeText(this, "Click on item ${post.title}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, PostDetailActivity::class.java)
+        intent.putExtra(POST_CONTENT, post.title)
+
+        startActivity(intent)
     }
 }

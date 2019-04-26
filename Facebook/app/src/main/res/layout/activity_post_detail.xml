@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PostDetailActivity">
+
+    <TextView
+        android:id="@+id/postDetailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/post_text_size"
+        android:text="Este é o conteúdo do post"
+        android:padding="@dimen/regular_margin"/>
+
+</android.support.constraint.ConstraintLayout>
