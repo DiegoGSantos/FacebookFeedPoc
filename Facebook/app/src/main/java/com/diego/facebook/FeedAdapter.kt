@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_post.view.*
 
 
-class FeedAdapter(private val context: Context, private val postsList: List<Post>) :
+class FeedAdapter(private val context: Context, private val postsList: List<Post>, val listener: OnItemClick) :
     RecyclerView.Adapter<FeedAdapter.PostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -34,6 +34,14 @@ class FeedAdapter(private val context: Context, private val postsList: List<Post
             Glide.with(itemView.context)
                 .load(post.image)
                 .into(itemView.postImage)
+
+            itemView.setOnClickListener {
+                listener.onPostClick(post)
+            }
         }
+    }
+
+    interface OnItemClick {
+        fun onPostClick(post: Post)
     }
 }
