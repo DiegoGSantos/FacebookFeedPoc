@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(), FeedAdapter.OnItemClick {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), FeedAdapter.OnItemClick {
         Service.create().getFeed().enqueue(object : retrofit2.Callback<List<Post>> {
             override fun onResponse(call: Call<List<Post>>, response: Response<List<Post>>) {
                 postRecyclerView.apply {
-                    adapter = FeedAdapter(this.context, response.body().orEmpty(), this@MainActivity)
+                    adapter = FeedAdapter(this.context, response.body().orEmpty())
                     layoutManager = LinearLayoutManager(this.context)
                 }
             }
